@@ -3,7 +3,6 @@ import CardMedia from '@mui/material/CardMedia';
 import {ImageListItem, Modal, Paper} from '@mui/material';
 import FilmCardInfo from "../FilmCardInfo";
 
-
 const style = {
     cardMedia: {
         objectFit: 'container',
@@ -39,5 +38,4 @@ const FilmItem = ({imagePath, filmId}: ImageProps) => {
         </ImageListItem>
     );
 }
-
 export default FilmItem;

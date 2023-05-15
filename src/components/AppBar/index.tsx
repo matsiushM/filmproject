@@ -16,6 +16,7 @@ const style = {
     }
 };
 export default function ButtonAppBar() {
+
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const [selectedOption, setSelectedOption] = useState("");
 
@@ -23,6 +24,7 @@ export default function ButtonAppBar() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -34,21 +36,17 @@ export default function ButtonAppBar() {
                 <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                     Movies
                 </Typography>
-
-
                 <Button
                     sx={style.menu}
                     onClick={handleClick}
                 >
                     {selectedOption || "My Account"}
                 </Button>
-
                 <Menu
                     anchorEl={anchorEl}
                     open={open}
                     onClose={handleClose}
                 >
-
                         <MenuItem component={Link} to={"/"} onClick={() => setSelectedOption("My account")}>My account</MenuItem>
                         <MenuItem component={Link} to={'/favorit'} onClick={() => setSelectedOption("Favorite")}>Favorite</MenuItem>
                 </Menu>

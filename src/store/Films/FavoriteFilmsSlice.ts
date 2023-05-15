@@ -1,5 +1,5 @@
 import {FilmInfo} from "../../models/models";
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 
 interface FavoriteFilmsState{
     films: FilmInfo[]
@@ -8,7 +8,6 @@ interface FavoriteFilmsState{
 const initialState:FavoriteFilmsState={
     films: []
 }
-
 export const FavoriteFilmsSlice = createSlice({
     name: 'favoriteFilms',
     initialState,

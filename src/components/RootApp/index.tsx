@@ -13,8 +13,6 @@ const style = {
         overflow: "hidden",
     },
 };
-
-
 const RootApp = () => {
     return (
         <>

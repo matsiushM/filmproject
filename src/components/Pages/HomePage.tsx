@@ -19,14 +19,13 @@ const style = {
         m: 3
     }
 };
-
 export function HomePage() {
 
     const dispatch = useDispatch();
 
     const [page, setPage] = useState(1);
 
-    const {isLoading, isError, data,refetch} = usePointPageQuery(page);
+    const {data,refetch} = usePointPageQuery(page);
 
     dispatch(addFilms(data));
 
@@ -34,21 +33,21 @@ export function HomePage() {
         dispatch(addFilms(data));
     }, [page, data, dispatch]);
 
+    const onChangePage = (newPage:number) => {
+        setPage(newPage);
+        refetch();
+    }
+
     return (
         <Box sx={style.box}>
-            {data &&
-                <FilmList/>
-            }
+            {data && <FilmList/>}
             <Pagination
                 sx={style.pagination}
                 count={data?.total_pages}
                 variant="outlined"
                 shape="rounded"
                 page={page}
-                onChange={(_, newPage) => {
-                    setPage(newPage);
-                    refetch();}
-                }
+                onChange={(_, newPage) => onChangePage(newPage)}
             />
         </Box>
     )

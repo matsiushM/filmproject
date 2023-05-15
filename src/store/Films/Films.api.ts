@@ -24,5 +24,4 @@ export const filmsApi = createApi({
         }),
     })
 });
-
 export const {usePointPageQuery} = filmsApi;

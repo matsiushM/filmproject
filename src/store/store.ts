@@ -1,8 +1,6 @@
 import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit";
 import {filmsApi} from "./Films/Films.api";
-import {filmsSlice} from "./Films/FilmsSlice";
-import rootReducer from "../reducer";
-import {FavoriteFilmsSlice} from "./Films/FavoriteFilmsSlice";
+import rootReducer from "./reducer";
 export default configureStore({
     reducer: {
         reducer: rootReducer,

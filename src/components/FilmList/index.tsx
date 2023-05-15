@@ -1,5 +1,4 @@
 import {Container, ImageList} from "@mui/material";
-
 import FilmItem from "../FilmItem";
 import Typography from "@mui/material/Typography";
 import React from "react";
@@ -14,7 +13,6 @@ const style = {
 }
 
 const FilmList = () => {
-
     const films = useFilms();
 
     return (
@@ -25,8 +23,7 @@ const FilmList = () => {
                     {films.results.map((item: FilmInfo) => (
                         <FilmItem key={item.id} imagePath={item.poster_path} filmId={item.id}/>
                     ))}
-                </ImageList>)
-            }
+                </ImageList>)}
         </Container>
     );
 };

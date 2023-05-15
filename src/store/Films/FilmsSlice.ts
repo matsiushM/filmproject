@@ -15,9 +15,7 @@ export const filmsSlice = createSlice({
         addFilms: (state, action) => {
             state = action.payload
             return state;
-        }
-    },
+        }},
     });
-
 export const {addFilms} = filmsSlice.actions;
 export default filmsSlice.reducer;
